@@ -1,5 +1,5 @@
-// Consolidated project schema shared between Woodsense (138 projects) and
-// Kreg (1,127 plans). See wood-working/schema.md for the full spec.
+// Consolidated project schema shared across Woodsense, Kreg, and AnaWhite.
+// See wood-working/schema.md for the full spec.
 
 export type Difficulty = "easy" | "moderate" | "advanced";
 
@@ -7,7 +7,7 @@ export type Difficulty = "easy" | "moderate" | "advanced";
  * Renderer prefers `cdn`; falls back to `asset` when cdn is absent. */
 export type ImageRef = { cdn?: string; asset?: string };
 
-export type SourceName = "Woodsense" | "Kreg";
+export type SourceName = "Woodsense" | "Kreg" | "AnaWhite";
 
 export type Source = {
   name: SourceName;

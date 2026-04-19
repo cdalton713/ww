@@ -4,6 +4,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import path from "node:path";
 
 export default defineConfig({
+  base: "/pwa-react/",
   plugins: [
     react(),
     VitePWA({
@@ -41,11 +42,12 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webmanifest,json}"],
         // Project image assets and PDFs can be large; we register a runtime
         // cache for them and let the "Save offline" button warm the cache.
-        // projects.json is ~8.5 MB now that it carries Woodsense + Kreg.
-        maximumFileSizeToCacheInBytes: 12 * 1024 * 1024,
+        // projects.json is ~14 MB with Woodsense (CDN URLs) + Kreg + AnaWhite.
+        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024,
         runtimeCaching: [
           {
-            // Self-hosted project images + plan PDFs under /assets
+            // Project images + plan PDFs are remote now; the "/assets/"
+            // same-origin bucket is legacy and kept for backwards compat.
             urlPattern: ({ url }) => url.pathname.includes("/assets/"),
             handler: "CacheFirst",
             options: {
