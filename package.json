@@ -1,0 +1,37 @@
+{
+  "name": "workshop-pwa",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Workshop - a woodworking project PWA (React + Mantine + TanStack)",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.17.1",
+    "@mantine/hooks": "^7.17.1",
+    "@mantine/notifications": "^7.17.1",
+    "@tabler/icons-react": "^3.29.0",
+    "@tanstack/react-query": "^5.66.0",
+    "@tanstack/react-router": "^1.114.3",
+    "immer": "^10.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "use-immer": "^0.11.0"
+  },
+  "devDependencies": {
+    "@tanstack/router-devtools": "^1.114.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.2",
+    "postcss": "^8.5.2",
+    "postcss-preset-mantine": "^1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.14",
+    "vite-plugin-pwa": "^0.21.1"
+  }
+}
